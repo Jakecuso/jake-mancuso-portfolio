@@ -564,25 +564,25 @@ main {
 
 .testimonials-title { margin-bottom: 20px; }
 
-.testimonials-list {
+.testimonials-list{
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   gap: 15px;
   margin: 0 -15px;
   padding: 25px 15px;
-  padding-bottom: 35px;
-  overflow-x: auto;
+  overflow-x: auto; /* Enables horizontal scrolling */
   scroll-behavior: smooth;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
-  height: auto; /* Allows the container to grow based on the content */
-  overflow: visible;
 }
 
+
+
+
 .testimonials-item {
-  min-width: 100%;
+ min-width: 300px; /* Adjust width as needed */
+  max-width: 500px; /* Maximum width for readability */
   scroll-snap-align: center;
+  padding: 15px; /* Adds padding for spacing within each item */
 }
 
 .testimonials-avatar-box {
@@ -602,8 +602,8 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
-  white-space: normal; /* Allows text wrapping */
-  overflow: visible; /* Ensures text is not clipped */
+  white-space: normal; /* Allows text to wrap */
+  overflow: visible; /* Ensures no text is clipped */
 }
 
 }

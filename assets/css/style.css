@@ -1880,3 +1880,12 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+/* Profile photo styling */
+.profile-photo {
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 50%; /* Makes the image circular */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  border: 3px solid var(--white-1); /* Adds a white border */
+  object-fit: cover; /* Ensures the image doesn’t distort */
+}

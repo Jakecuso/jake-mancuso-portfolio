@@ -157,3 +157,16 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+// Apply parallax effect on side images with flair animation
+document.querySelectorAll('.side-image').forEach((image) => {
+  image.addEventListener('mousemove', (e) => {
+    const { width, height, left, top } = image.getBoundingClientRect();
+    const x = (e.clientX - left) / width - 0.5;
+    const y = (e.clientY - top) / height - 0.5;
+    image.style.transform = `scale(1.05) translate(${x * 10}px, ${y * 10}px)`;
+  });
+
+  image.addEventListener('mouseleave', () => {
+    image.style.transform = 'scale(1)';
+  });
+});

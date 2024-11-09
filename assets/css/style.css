@@ -1897,4 +1897,46 @@ textarea.form-input::-webkit-resizer { display: none; }
   transform: scale(1.05); /* Slightly enlarges the image on hover */
   box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.4), 0px 8px 16px rgba(0, 0, 0, 0.25); /* Adds stronger shadow on hover */
 }
+/* Container for each side image */
+.service-content-box {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Side images style */
+.side-image {
+  width: 100%; /* Adjust width as necessary */
+  height: auto;
+  max-width: 250px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-1);
+  transition: transform 0.4s ease;
+  z-index: 1;
+}
+
+/* Flair effect using a pseudo-element */
+.side-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%; /* Larger than the image to allow rotation */
+  height: 150%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  transform: rotate(45deg) translate(-50%, -50%);
+  transition: transform 0.5s ease;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Hover effect to move the image slightly and animate flair */
+.service-content-box:hover .side-image {
+  transform: scale(1.05);
+}
+
+.service-content-box:hover .side-image::before {
+  transform: rotate(45deg) translate(50%, 50%);
+}
+
 

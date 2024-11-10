@@ -2062,6 +2062,17 @@ textarea.form-input::-webkit-resizer { display: none; }
   overflow: hidden;
   text-overflow: ellipsis;
 }
+article {
+    display: none;
+}
+article.active {
+    display: block;
+    animation: fade 0.5s ease backwards;
+}
+.navbar {
+    position: fixed;
+    z-index: 5;
+}
 
 
 

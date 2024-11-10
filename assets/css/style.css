@@ -2056,21 +2056,11 @@ textarea.form-input::-webkit-resizer { display: none; }
 .certification-item.visible {
   animation: wavePop 0.4s ease forwards;
 }
-/* General adjustments for all contact information */
-.contacts-list .contact-item {
-  font-size: 0.85em; /* Slightly smaller font size for contact items */
-}
-
-/* Specific styling for individual contact info elements */
-.contact-info .contact-title {
-  font-size: 0.75em; /* Smaller title for each contact detail, like 'Email' or 'Phone' */
-}
-
-.contact-info .contact-link, /* Email and Phone Number */
-.contact-info time, /* Birthday */
-.contact-info address /* Location */ {
-  font-size: 0.85em; /* Slightly smaller for content */
-  line-height: 1.2; /* Adjust line height for a more compact layout */
+.contact-item .contact-link {
+  font-size: 10px; /* Adjust the size as needed */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 

@@ -2044,35 +2044,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 .certification-item p, .certification-item a {
   text-align: center;
 }
-.certifications-list {
-  display: flex;
-  gap: 20px;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  perspective: 1000px;
-}
-
-.certification-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 200px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform-style: preserve-3d;
-}
-
-.certification-item img {
-  width: 150px;
-  transition: transform 0.3s ease;
-  transform-origin: center center;
-  border-radius: 8px;
-}
-
-/* Optional: Add hover effect to enhance the 3D flip */
-.certification-item:hover {
-  transform: scale(1.05);
-}
 @keyframes wavePop {
   0% {
     opacity: 0;
@@ -2085,7 +2056,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 .certification-item {
-  opacity: 0; /* Hidden initially */
   transform: translateY(20px) scale(0.9);
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }

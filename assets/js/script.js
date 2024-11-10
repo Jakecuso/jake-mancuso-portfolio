@@ -28,23 +28,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Modal toggle function
   const testimonialsModalFunc = function () {
-    modalContainer.classList.toggle("active");
-    overlay.classList.toggle("active");
+    if (modalContainer && overlay) {
+      modalContainer.classList.toggle("active");
+      overlay.classList.toggle("active");
+    }
   }
 
   // Add click event to all modal items
   testimonialsItem.forEach((item) => {
     item.addEventListener("click", function () {
-      modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-      modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-      modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-      modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+      const avatar = this.querySelector("[data-testimonials-avatar]");
+      const title = this.querySelector("[data-testimonials-title]");
+      const text = this.querySelector("[data-testimonials-text]");
+
+      if (avatar && modalImg) {
+        modalImg.src = avatar.src;
+        modalImg.alt = avatar.alt;
+      }
+
+      if (title && modalTitle) {
+        modalTitle.innerHTML = title.innerHTML;
+      }
+
+      if (text && modalText) {
+        modalText.innerHTML = text.innerHTML;
+      }
 
       testimonialsModalFunc();
     });
   });
 
-  // Add click event to modal close button
+  // Add click event to modal close button and overlay
   if (modalCloseBtn && overlay) {
     modalCloseBtn.addEventListener("click", testimonialsModalFunc);
     overlay.addEventListener("click", testimonialsModalFunc);
@@ -64,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
   selectItems.forEach((item) => {
     item.addEventListener("click", function () {
       const selectedValue = this.innerText.toLowerCase();
-      selectValue.innerText = this.innerText;
+      if (selectValue) selectValue.innerText = this.innerText;
       elementToggleFunc(select);
       filterFunc(selectedValue);
     });
@@ -75,9 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const filterFunc = function (selectedValue) {
     filterItems.forEach((item) => {
-      if (selectedValue === "all") {
-        item.classList.add("active");
-      } else if (selectedValue === item.dataset.category) {
+      if (selectedValue === "all" || selectedValue === item.dataset.category) {
         item.classList.add("active");
       } else {
         item.classList.remove("active");
@@ -91,10 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
   filterBtn.forEach((btn) => {
     btn.addEventListener("click", function () {
       const selectedValue = this.innerText.toLowerCase();
-      selectValue.innerText = this.innerText;
+      if (selectValue) selectValue.innerText = this.innerText;
       filterFunc(selectedValue);
 
-      lastClickedBtn.classList.remove("active");
+      if (lastClickedBtn) lastClickedBtn.classList.remove("active");
       this.classList.add("active");
       lastClickedBtn = this;
     });
@@ -109,9 +121,9 @@ document.addEventListener("DOMContentLoaded", function () {
   formInputs.forEach((input) => {
     input.addEventListener("input", function () {
       // Check form validation
-      if (form.checkValidity()) {
+      if (form && form.checkValidity() && formBtn) {
         formBtn.removeAttribute("disabled");
-      } else {
+      } else if (formBtn) {
         formBtn.setAttribute("disabled", "");
       }
     });
@@ -124,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add event to all nav links
   navigationLinks.forEach((link) => {
     link.addEventListener("click", function () {
-      const targetPage = this.innerText.toLowerCase();
+      const targetPage = link.getAttribute("data-nav-link");
 
       pages.forEach((page) => {
         if (page.dataset.page === targetPage) {
@@ -135,10 +147,9 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       navigationLinks.forEach((link) => link.classList.remove("active"));
-      this.classList.add("active");
+      link.classList.add("active");
 
       window.scrollTo(0, 0);
     });
   });
 });
-

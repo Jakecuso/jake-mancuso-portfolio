@@ -3,6 +3,13 @@
 \*-----------------------------------*/
 
 
+/**
+ * copyright 2022 @codewithsadee
+ */
+
+
+
+
 
 /*-----------------------------------*\
   #CUSTOM PROPERTY
@@ -557,25 +564,23 @@ main {
 
 .testimonials-title { margin-bottom: 20px; }
 
-.testimonials-list{
+.testimonials-list {
   display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 15px;
   margin: 0 -15px;
   padding: 25px 15px;
-  overflow-x: auto; /* Enables horizontal scrolling */
+  padding-bottom: 35px;
+  overflow-x: auto;
   scroll-behavior: smooth;
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
 }
 
-
-
-
 .testimonials-item {
- min-width: 300px; /* Adjust width as needed */
-  max-width: 500px; /* Maximum width for readability */
+  min-width: 100%;
   scroll-snap-align: center;
-  padding: 15px; /* Adds padding for spacing within each item */
 }
 
 .testimonials-avatar-box {
@@ -595,10 +600,11 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
-  white-space: normal; /* Allows text to wrap */
-  overflow: visible; /* Ensures no text is clipped */
-}
-
+  display: -webkit-box;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 
@@ -1868,200 +1874,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-	 * RESUME
-	 */
+   * RESUME
+   */
 
   .timeline-text { max-width: 700px; }
 
 }
-/* Enhanced Profile Photo Styling */
-.profile-photo {
-  width: 150px; /* Adjust size as needed */
-  height: 150px; /* Keeps image size consistent */
-  border-radius: 50%; /* Makes the image circular */
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3), 0px 4px 8px rgba(0, 0, 0, 0.15); /* Adds layered shadow for depth */
-  border: 4px solid rgba(255, 255, 255, 0.6); /* Adds a semi-transparent white border */
-  padding: 4px; /* Space between image and border */
-  background: linear-gradient(135deg, #ffecd2, #fcb69f); /* Soft gradient behind the image */
-  object-fit: cover; /* Ensures the image doesn’t distort */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds smooth animation on hover */
-}
-
-.profile-photo:hover {
-  transform: scale(1.05); /* Slightly enlarges the image on hover */
-  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.4), 0px 8px 16px rgba(0, 0, 0, 0.25); /* Adds stronger shadow on hover */
-}
-/* Container for each side image */
-.service-content-box {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Side images style */
-.side-image {
-  width: 100%; /* Adjust width as necessary */
-  height: auto;
-  max-width: 250px;
-  border-radius: 10px;
-  box-shadow: var(--shadow-1);
-  transition: transform 0.4s ease;
-  z-index: 1;
-}
-
-/* Flair effect using a pseudo-element */
-.side-image::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 150%; /* Larger than the image to allow rotation */
-  height: 150%;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
-  transform: rotate(45deg) translate(-50%, -50%);
-  transition: transform 0.5s ease;
-  z-index: 2;
-  pointer-events: none;
-  opacity: 0.7;
-}
-
-/* Hover effect to move the image slightly and animate flair */
-.service-content-box:hover .side-image {
-  transform: scale(1.05);
-}
-
-.service-content-box:hover .side-image::before {
-  transform: rotate(45deg) translate(50%, 50%);
-}
-/* Certifications Section Styling */
-.certifications {
-  margin-bottom: 30px;
-}
-
-.certifications-title {
-  margin-bottom: 20px;
-}
-
-/* Certifications List Scrollbar */
-.certifications-list {
-  display: flex;
-  overflow-x: auto;
-  gap: 15px;
-  padding: 15px;
-  scroll-behavior: smooth;
-  scroll-snap-type: inline mandatory;
-}
-
-/* Certification Item Styling */
-.certification-item {
-  min-width: 200px; /* Adjust as needed */
-  scroll-snap-align: center;
-  text-align: center;
-}
-
-/* Image Styling */
-.certification-item img {
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Scrollbar Styling */
-.certifications-list::-webkit-scrollbar {
-  height: 8px;
-}
-
-.certifications-list::-webkit-scrollbar-thumb {
-  background-color: #FFC107; /* Replace with the yellowish color on your site */
-  border-radius: 4px;
-}
-
-.certifications-list::-webkit-scrollbar-track {
-  background-color: #f0f0f0; /* Light background for the track */
-}
-.certifications-list {
-  display: flex;
-  gap: 20px; /* Adjust spacing between items */
-  padding: 15px 0;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  align-items: center;
-}
-
-.certification-item {
-  text-align: center;
-  min-width: 150px; /* Set a minimum width for each item */
-  flex-shrink: 0;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.certification-item:hover {
-  transform: scale(1.05); /* Slight scale-up on hover */
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow */
-}
-
-.certification-item img {
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.certification-item p {
-  font-size: 0.9em;
-  color: var(--light-gray); /* Match the light gray tone in your theme */
-}
-
-.certifications-list::-webkit-scrollbar {
-  height: 8px;
-}
-
-.certifications-list::-webkit-scrollbar-thumb {
-  background-color: #FFC107; /* Yellowish color to match your theme */
-  border-radius: 4px;
-}
-.certification-item {
-  text-align: center;
-  min-width: 150px;
-  flex-shrink: 0;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.certification-item img {
-  cursor: pointer;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
-
-.certification-item p, .certification-item a {
-  text-align: center;
-}
-@keyframes wavePop {
-  0% {
-    opacity: 0;
-    transform: translateY(20px) scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.certification-item {
-  transform: translateY(20px) scale(0.9);
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-}
-
-.certification-item.visible {
-  animation: wavePop 0.4s ease forwards;
-}
-.contact-item .contact-link {
-  font-size: 10px; /* Adjust the size as needed */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-
-

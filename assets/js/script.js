@@ -196,3 +196,26 @@ if (certificationsList) {
     });
   });
 }
+// Function to check if an element is in viewport
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return rect.left >= 0 && rect.left <= window.innerWidth;
+}
+
+// Scroll event listener to apply the wave effect
+const certificationItems = document.querySelectorAll('.certification-item');
+const certificationsList = document.querySelector('.certifications-list');
+
+if (certificationsList) {
+  certificationsList.addEventListener('scroll', () => {
+    certificationItems.forEach((item, index) => {
+      if (isInViewport(item)) {
+        setTimeout(() => {
+          item.classList.add('visible');
+        }, index * 100); // Adjust the delay for the wave effect
+      } else {
+        item.classList.remove('visible'); // Remove class if item goes out of view
+      }
+    });
+  });
+}

@@ -2069,6 +2069,13 @@ article.active {
     display: block;
     animation: fade 0.5s ease backwards;
 }
+article[data-page] {
+  display: none;
+}
+
+article[data-page].active {
+  display: block;
+}
 
 
 

@@ -206,6 +206,14 @@ function isInViewport(element) {
 const certificationItems = document.querySelectorAll('.certification-item');
 const certificationsList = document.querySelector('.certifications-list');
 
+// Check visibility on load
+certificationItems.forEach((item, index) => {
+  if (isInViewport(item)) {
+    item.classList.add('visible');
+  }
+});
+
+// Scroll event listener for the certifications list
 if (certificationsList) {
   certificationsList.addEventListener('scroll', () => {
     certificationItems.forEach((item, index) => {
@@ -219,3 +227,25 @@ if (certificationsList) {
     });
   });
 }
+// Select all navigation links and page sections
+const navigationLinks = document.querySelectorAll("[data-nav-link]");
+const pages = document.querySelectorAll("[data-page]");
+
+// Add click event to each navigation link
+navigationLinks.forEach(link => {
+  link.addEventListener("click", function () {
+    const targetPage = this.innerText.toLowerCase();
+
+    // Hide all pages and remove 'active' class from nav links
+    pages.forEach(page => page.classList.remove("active"));
+    navigationLinks.forEach(nav => nav.classList.remove("active"));
+
+    // Show target page and add 'active' class to clicked link
+    document.querySelector(`[data-page="${targetPage}"]`).classList.add("active");
+    this.classList.add("active");
+
+    // Scroll to top when navigating to a new section
+    window.scrollTo(0, 0);
+  });
+});
+

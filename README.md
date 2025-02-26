@@ -1,44 +1,53 @@
-# vCard - Personal portfolio
+# 🖥️ Jake Mancuso's Portfolio
 
-![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/vcard-personal-portfolio)
-![GitHub stars](https://img.shields.io/github/stars/codewithsadee/vcard-personal-portfolio?style=social)
-![GitHub forks](https://img.shields.io/github/forks/codewithsadee/vcard-personal-portfolio?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-[![YouTube Video Views](https://img.shields.io/youtube/views/SoxmIlgf2zM?style=social)](https://youtu.be/SoxmIlgf2zM)
+Welcome to my personal portfolio website! This project showcases my work, skills, and experience in **cybersecurity, AI engineering, and software development**. The site is built using modern web technologies and is hosted on [Netlify](https://warm-moonbeam-a9e5db.netlify.app/).
 
-vCard is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
+## 🚀 Features
+- **About Me** - A brief introduction and background.
+- **Projects** - A showcase of my personal and professional projects.
+- **Certifications & Education** - Details on my academic and professional achievements.
+- **Contact Form** - A way for visitors to reach out to me.
 
-## Demo
+## 📂 Installation & Setup
+To run this project locally, follow these steps:
 
-![vCard Desktop Demo](./website-demo-image/desktop.png "Desktop Demo")
-![vCard Mobile Demo](./website-demo-image/mobile.png "Mobile Demo")
-
-## Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
-
-## Installing vCard
-
-To install **vCard**, follow these steps:
-
-Linux and macOS:
-
-```bash
-sudo git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/Jakecuso/jake-mancuso-portfolio.git
 ```
 
-Windows:
-
-```bash
-git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
+### 2️⃣ Navigate to the Project Directory
+```sh
+cd jake-mancuso-portfolio
 ```
 
-## Contact
+### 3️⃣ Open the Project in a Code Editor
+You can use **VS Code**, **Sublime Text**, or any text editor of your choice.
 
-If you want to contact me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
+### 4️⃣ Run a Local Server (Optional)
+If your portfolio includes interactive elements that require a server, you can use **Live Server** in VS Code or run:
+```sh
+python -m http.server
+```
+Then open `http://localhost:8000/` in your browser.
 
-## License
+## 📜 Technologies Used
+- **HTML, CSS, JavaScript** - Core web technologies.
+- **Tailwind CSS** - For styling.
+- **Formspree** - For handling contact form submissions.
+- **Netlify** - For deployment and hosting.
 
-MIT
+## 🛠️ Contributing
+If you want to contribute or suggest improvements, feel free to:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -m 'Add new feature'`).
+4. Push the branch (`git push origin feature-branch`).
+5. Open a **Pull Request**.
+
+## 📬 Contact
+If you have any questions or want to connect, reach out via my portfolio's contact form or find me on **[LinkedIn](#)**.
+
+---
+✅ **Live Portfolio:** [warm-moonbeam-a9e5db.netlify.app](https://warm-moonbeam-a9e5db.netlify.app/)
+
